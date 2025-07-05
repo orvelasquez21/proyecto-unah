@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admisiones UNAH</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --unah-blue: #0a3d62;
+            --unah-green: #1e8449;
+        }
+        .bg-unah {
+            background-color: var(--unah-blue);
+        }
+        .btn-unah {
+            background-color: var(--unah-blue);
+            color: white;
+        }
+        .btn-unah:hover {
+            background-color: #0c4b7a;
+            color: white;
+        }
+        .hero-section {
+            background: linear-gradient(rgba(10, 61, 98, 0.8), rgba(10, 61, 98, 0.8)), 
+                        url('../assets/campus-unah.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--unah-blue);
+        }
+        .process-step {
+            border-left: 3px solid var(--unah-green);
+            padding-left: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <display-header></display-header>
+
+    <!-- Sección Hero -->
+    <header class="hero-section py-5 mb-5">
+        <div class="container text-center py-5">
+            <h1 class="display-4 fw-bold mb-4">Proceso de Admisión UNAH 2025</h1>
+            <p class="lead mb-5">Forma parte de la institución de educación superior más importante de Honduras</p>
+            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                <a href="#solicitud" class="btn btn-primary btn-lg px-4 gap-3">
+                    <i class="bi bi-pencil-fill"></i> Llenar Solicitud
+                </a>
+                <a href="#calendarios" class="btn btn-outline-light btn-lg px-4">
+                    <i class="bi bi-calendar-check"></i> Ver Calendario
+                </a>
+            </div>
+        </div>
+    </header>
+  <display-header></display-header>
+  
+    <main class="container">
+        <!-- Sección de Solicitud -->
+        <section id="solicitud" class="my-5 py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="fw-bold mb-4"><i class="bi bi-file-earmark-text"></i> Solicitud de Admisión</h2>
+                    <p class="lead">Inicia tu proceso de admisión completando el formulario en línea.</p>
+                    
+                    <div class="process-step mb-4">
+                        <h4>1. Registro de Aspirante</h4>
+                        <p>Crea tu cuenta en el sistema con tus datos personales.</p>
+                    </div>
+                    
+                    <div class="process-step mb-4">
+                        <h4>2. Llenado de Formulario</h4>
+                        <p>Completa toda la información requerida para tu solicitud.</p>
+                    </div>
+                    
+                    <div class="process-step mb-4">
+                        <h4>3. Documentación</h4>
+                        <p>Sube los documentos solicitados en formato digital.</p>
+                    </div>
+                    
+                    <a href="#" class="btn btn-unah btn-lg mt-3" data-bs-toggle="modal" data-bs-target="#solicitudModal">
+                        <i class="bi bi-pencil-square"></i> Iniciar Solicitud
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="../../assets/img/logo-unah.png" alt="Formulario de admisión" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Calendarios -->
+        <section id="calendarios" class="my-5 py-5 bg-light rounded-3">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold"><i class="bi bi-calendar-event"></i> Calendario Académico</h2>
+                <p class="lead">Fechas importantes del proceso de admisión</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mb-3">
+                                <i class="bi bi-pencil-square"></i>
+                            </div>
+                            <h3>Periodo de Solicitud</h3>
+                            <p>01 Mar - 30 Abr 2025</p>
+                            <p class="text-muted">Recepeción de formularios completos</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mb-3">
+                                <i class="bi bi-clipboard-check"></i>
+                            </div>
+                            <h3>Evaluación</h3>
+                            <p>15 May - 30 Jun 2025</p>
+                            <p class="text-muted">Revisión de documentos y requisitos</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mb-3">
+                                <i class="bi bi-envelope-open"></i>
+                            </div>
+                            <h3>Resultados</h3>
+                            <p>15 Jul 2025</p>
+                            <p class="text-muted">Publicación de aspirantes admitidos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="#" class="btn btn-outline-unah btn-lg">
+                    <i class="bi bi-download"></i> Descargar Calendario Completo
+                </a>
+            </div>
+        </section>
+
+        <!-- Sección de Requisitos -->
+        <section id="requisitos" class="my-5 py-5">
+            <h2 class="fw-bold text-center mb-5"><i class="bi bi-list-check"></i> Requisitos de Admisión</h2>
+            
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100 border-unah">
+                        <div class="card-header bg-unah text-white">
+                            <h4 class="mb-0">Para Hondureños</h4>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Título de educación media (original y copia)</li>
+                                <li class="list-group-item">Certificado de notas de educación media</li>
+                                <li class="list-group-item">Fotocopia de identidad</li>
+                                <li class="list-group-item">2 fotografías tamaño carné</li>
+                                <li class="list-group-item">Comprobante de pago de derechos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card h-100 border-unah">
+                        <div class="card-header bg-unah text-white">
+                            <h4 class="mb-0">Para Extranjeros</h4>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Título debidamente apostillado</li>
+                                <li class="list-group-item">Certificado de notas legalizado</li>
+                                <li class="list-group-item">Pasaporte vigente</li>
+                                <li class="list-group-item">Carné de residencia (si aplica)</li>
+                                <li class="list-group-item">Traducción oficial (si aplica)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal de Solicitud -->
+    <div class="modal fade" id="solicitudModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-unah text-white">
+                <h5 class="modal-title">Formulario de Admisión</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formularioAdmisionModal">
+                    <div class="row g-3">
+                        <!-- Datos Personales -->
+                        <div class="col-md-6">
+                            <label class="form-label required-field">Nombres</label>
+                            <input type="text" class="form-control" id="modalNombres" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label required-field">Apellidos</label>
+                            <input type="text" class="form-control" id="modalApellidos" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label required-field">Fecha de Nacimiento</label>
+                            <input type="date" class="form-control" id="modalFechaNacimiento" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label required-field">Nacionalidad</label>
+                            <select class="form-select" id="modalNacionalidad" required>
+                                <option value="">Seleccione...</option>
+                                <option value="HN">Hondureña</option>
+                                <option value="EX">Extranjera</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Campos condicionales para identidad/pasaporte -->
+                        <div class="col-md-6" id="modalIdentidadContainer">
+                            <label class="form-label required-field">Número de Identidad</label>
+                            <input type="text" class="form-control" id="modalIdentidad" required>
+                        </div>
+                        <div class="col-md-6" id="modalPasaporteContainer" style="display: none;">
+                            <label class="form-label">Número de Pasaporte</label>
+                            <input type="text" class="form-control" id="modalPasaporte">
+                        </div>
+                        
+                        <!-- Información de Contacto -->
+                        <div class="col-md-6">
+                            <label class="form-label required-field">Teléfono</label>
+                            <input type="tel" class="form-control" id="modalTelefono" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Celular (Opcional)</label>
+                            <input type="tel" class="form-control" id="modalCelular">
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label required-field">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="modalCorreo" required>
+                        </div>
+                        
+                        <!-- Información Académica -->
+                        <div class="col-md-6">
+                            <label class="form-label required-field">Centro Regional</label>
+                            <select class="form-select" id="modalCentroRegional" required>
+                                <option value="">Seleccione...</option>
+                                <option>Ciudad Universitaria (Tegucigalpa)</option>
+                                <option>Valle de Sula (San Pedro Sula)</option>
+                                <option>UNAH-VS (San Pedro Sula)</option>
+                                <option>UNAH-TEC (Aguán)</option>
+                                <option>Centro Regional del Litoral Atlántico</option>
+                                <option>Centro Regional del Occidente</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label required-field">Carrera de Interés</label>
+                            <select class="form-select" id="modalCarrera" required>
+                                <option value="">Seleccione...</option>
+                                <option>Medicina</option>
+                                <option>Derecho</option>
+                                <option>Ingeniería Civil</option>
+                                <option>Ingeniería en Sistemas</option>
+                                <option>Administración de Empresas</option>
+                                <option>Psicología</option>
+                                <option>Odontología</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Documentación -->
+                        <div class="col-12">
+                            <label class="form-label required-field">Certificado de Estudios (PDF, 2MB max)</label>
+                            <input type="file" class="form-control" id="modalCertificado" accept=".pdf" required>
+                        </div>
+                        <div class="col-12" id="modalDocumentoIdentidadContainer">
+                            <label class="form-label required-field">Documento de Identidad (PDF/Imagen, 2MB max)</label>
+                            <input type="file" class="form-control" id="modalDocumentoIdentidad" accept=".pdf,.jpg,.jpeg,.png" required>
+                        </div>
+                        <div class="col-12" id="modalPasaporteDocumentoContainer" style="display: none;">
+                            <label class="form-label">Pasaporte (PDF/Imagen, 2MB max)</label>
+                            <input type="file" class="form-control" id="modalPasaporteDocumento" accept=".pdf,.jpg,.jpeg,.png">
+                        </div>
+                        <div class="col-12" id="modalApostillaContainer" style="display: none;">
+                            <label class="form-label">Documento Apostillado (PDF, 2MB max)</label>
+                            <input type="file" class="form-control" id="modalApostilla" accept=".pdf">
+                        </div>
+                        
+                        <!-- Declaración -->
+                        <div class="col-12 mt-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="modalDeclaracion" required>
+                                <label class="form-check-label required-field" for="modalDeclaracion">
+                                    Declaro que toda la información proporcionada es veraz
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-unah" id="modalEnviarSolicitud">Enviar Solicitud</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Modal de Login (para empleados) -->
+     <unah-loging></unah-loging>
+
+    <!-- Pie de página -->
+    <unah-footer></unah-footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./../../assets/js/main.mjs"></script>
+  <script src="./../../assets/js/admisiones.js"></script>
+</body>
+</html>

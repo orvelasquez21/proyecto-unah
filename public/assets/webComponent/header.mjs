@@ -1,4 +1,4 @@
-class header extends HTMLElement {
+class unahHeader extends HTMLElement {
 
   connectedCallback() {
     this.displayHeader();
@@ -29,5 +29,5 @@ class header extends HTMLElement {
 
 }
 export {
-  header
+  unahHeader
 }

@@ -1,0 +1,51 @@
+name: CI para módulo de Admisiones
+
+on:
+  push:
+    paths:
+      - 'proyecto-unah/public/assets/webComponent/admissionsWebComponent/**'
+      - 'proyecto-unah/public/views/admissions/**'
+      - 'proyecto-unah/public/assets/js/**'
+      - 'proyecto-unah/src/services/admissions/**'
+  pull_request:
+    paths:
+      - 'proyecto-unah/public/assets/webComponent/admissionsWebComponent/**'
+      - 'proyecto-unah/public/views/admissions/**'
+      - 'proyecto-unah/public/assets/js/**'
+      - 'proyecto-unah/src/services/admissions/**'
+
+jobs:
+  php-lint:
+    name: Validación PHP
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v3
+
+      - name: Instalar PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+
+      - name: Validar archivos PHP
+        run: |
+          find proyecto-unah -name "*.php" -exec php -l {} \;
+
+  js-lint:
+    name: Validación JS
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v3
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Instalar ESLint
+        run: npm install eslint --global
+
+      - name: Verificar sintaxis JS
+        run: |
+          eslint proyecto-unah/public/assets/webComponent/admissionsWebComponent --ext .js || true

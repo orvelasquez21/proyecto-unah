@@ -96,7 +96,7 @@
     
     // Función para cargar datos desde el API
     function cargarSolicitudes() {
-        fetch("http://localhost:3000/api-gateway/public/listarSolicitudes.php")
+        fetch("http://localhost:3000/public/api/AdmissionsListarSolicitudes.php")
             .then(response => {
                 if (!response.ok) throw new Error("Error al cargar datos");
                 return response.json();
@@ -262,3 +262,35 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+const validationData = ["Nombre corresponden con el titulo", 
+                        "Apellidos corresponden con el titulo", 
+                        "Numero de identidad consistente",
+                        "Numero  telefonico consistente", 
+                        "Numero pasaporte consistente",
+                        "Documento Titulo correcto y legible"         
+];
+
+function rederCheckBox(){
+    const contenedor =  docuement.getElementById("contenedorValidaciones");
+
+    if(!contenedor){
+        console.log("no existe la etiqueta con id contenedorValidaciones");
+        return ;
+    }
+
+
+    let htmlCheckBoxs="";
+
+    validationData.forEach((contenido, index) => {
+        
+        htmlCheckBoxs += ` <div class="form-check">
+                <input class="form-check-input" type="checkbox${index}" id="check${contenido}" name="validaciones" value="${contenido}">
+                <label class="form-check-label" for="docLegible" >
+                  ${contenido}
+                </label>
+              </div>`
+    });
+
+    contenedor.innerHTML= htmlCheckBoxs;
+}

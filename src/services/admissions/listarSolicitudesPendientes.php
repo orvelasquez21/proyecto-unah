@@ -1,7 +1,7 @@
 <?php
-require_once '../config/conexion.php';
-require_once '../src/services/SolicitudesService.php';
+require_once '../config/db_config.php';
+require_once './SolicitudesService.php';
 
-$listado = listarSolicitudesPendientes($pdo);
+$listado = listarSolicitudes($pdo);
 header('Content-Type: application/json');
 echo json_encode($listado);

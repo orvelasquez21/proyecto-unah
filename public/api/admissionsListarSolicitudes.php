@@ -1,10 +1,20 @@
-
 <?php
-// Mostrar errores para depurar
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
+//require_once __DIR__ .  '/../../src/config/db_config.php';
+//require_once __DIR__ .  '/../../src/services/admissions/solicitudesService.php';
 
-// Ruta correcta, subiendo dos niveles desde 'public'
-require_once __DIR__ . '/../../services/admissions/src/controllers/solicitudesController.php';
-
+//$listado = listarSolicitudesPendientes($pdo);
+//header('Content-Type: application/json');
+//echo json_encode($listado);
+require_once __DIR__ . '/../../src/controllers/solicitudesController.php';
 listarSolicitudesController();
+
+
+
+// Mostrar errores para depurar
+//ini_set('display_errors', 1);
+//error_reporting(E_ALL);
+
+
+
+
+

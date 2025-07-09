@@ -8,45 +8,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    <style>
-        :root {
-            --unah-blue: #0a3d62;
-            --unah-green: #1e8449;
-        }
-        .bg-unah {
-            background-color: var(--unah-blue);
-        }
-        .btn-unah {
-            background-color: var(--unah-blue);
-            color: white;
-        }
-        .btn-unah:hover {
-            background-color: #0c4b7a;
-            color: white;
-        }
-        .hero-section {
-            background: linear-gradient(rgba(10, 61, 98, 0.8), rgba(10, 61, 98, 0.8)), 
-                        url('../assets/campus-unah.jpg');
-            background-size: cover;
-            background-position: center;
-            color: white;
-        }
-        .feature-icon {
-            font-size: 2.5rem;
-            color: var(--unah-blue);
-        }
-        .process-step {
-            border-left: 3px solid var(--unah-green);
-            padding-left: 15px;
-        }
-    </style>
+    <link rel="stylesheet" href="../../assets/css/formulario.css">
+  
 </head>
 <body>
     <!-- Barra de navegación -->
     <display-header></display-header>
 
     <!-- Sección Hero -->
-    <header class="hero-section py-5 mb-5">
+    <header class="hero-section py-5 mb-5 mt-5 bg-secondary text-white">
         <div class="container text-center py-5">
             <h1 class="display-4 fw-bold mb-4">Proceso de Admisión UNAH 2025</h1>
             <p class="lead mb-5">Forma parte de la institución de educación superior más importante de Honduras</p>
@@ -63,7 +33,7 @@
   <display-header></display-header>
   
     <main class="container">
-        <!-- Sección de Solicitud -->
+        <!-- Sección de Solicitud indicaciones necesarias para llenar formularios de aspirantes -->
         <section id="solicitud" class="my-5 py-5">
             <div class="row align-items-center">
                 <div class="col-lg-6">
@@ -71,13 +41,22 @@
                     <p class="lead">Inicia tu proceso de admisión completando el formulario en línea.</p>
                     
                     <div class="process-step mb-4">
-                        <h4>1. Registro de Aspirante</h4>
-                        <p>Crea tu cuenta en el sistema con tus datos personales.</p>
+                        <h4>1. Dar clic en el botón de inscripción</h4>
+                        <p>Ingresa los datos que se te solicitan:</p>
+                        <ul>Nombre completo</ul>
+                        <ul>Número de identidad para hondureños</ul>
+                        <ul>Número de pasaporte o carné de residencia para extrajeros</ul>
+                        <ul>Correo electronico PERSONAL, ACTIVO Y CON ESPACIO DISPONIBLE ya que sera
+                            el medio de comunicación oficial para notificaciones de tu proceso de inscripción.
+                        </ul>
                     </div>
                     
                     <div class="process-step mb-4">
                         <h4>2. Llenado de Formulario</h4>
                         <p>Completa toda la información requerida para tu solicitud.</p>
+                        <p>Durante el llenado del formulario deberás de subir una archivo que contenga 
+                            la imagen de tu titulo academico de 
+                        </p>
                     </div>
                     
                     <div class="process-step mb-4">
@@ -89,11 +68,13 @@
                         <i class="bi bi-pencil-square"></i> Iniciar Solicitud
                     </a>
                 </div>
-                <div class="col-lg-6">
-                    <img src="../../assets/img/logo-unah.png" alt="Formulario de admisión" class="img-fluid rounded shadow">
+                <div class="col-lg-6 text-center">
+                    <img src="../../assets/img/logo-unah.png" alt="Formulario de admisión" class="img-fluid rounded shadow mt-4">
                 </div>
             </div>
         </section>
+
+
 
         <!-- Sección de Calendarios -->
         <section id="calendarios" class="my-5 py-5 bg-light rounded-3">
@@ -102,41 +83,41 @@
                 <p class="lead">Fechas importantes del proceso de admisión</p>
             </div>
             
-            <div class="row g-4">
-                <div class="col-md-4">
+            <div class="row g-4 ">
+                <div class="col-md-4 ">
                     <div class="card h-100 border-0 shadow-sm">
                         <div class="card-body text-center">
                             <div class="feature-icon mb-3">
-                                <i class="bi bi-pencil-square"></i>
+                                <i class="bi bi-pencil-square important-date"></i>
                             </div>
                             <h3>Periodo de Solicitud</h3>
-                            <p>01 Mar - 30 Abr 2025</p>
+                            <p>01 Mar - 30 Abr 2025</p> <!--Aqui  mas adelante cambiar con ifo de las bases de datos -->
                             <p class="text-muted">Recepeción de formularios completos</p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="col-md-4">
+                <div class="col-md-4 ">
                     <div class="card h-100 border-0 shadow-sm">
                         <div class="card-body text-center">
                             <div class="feature-icon mb-3">
-                                <i class="bi bi-clipboard-check"></i>
+                                <i class="bi bi-clipboard-check important-date"></i>
                             </div>
                             <h3>Evaluación</h3>
-                            <p>15 May - 30 Jun 2025</p>
+                            <p>15 May - 30 Jun 2025</p><!--Aqui  mas adelante cambiar con ifo de las bases de datos -->
                             <p class="text-muted">Revisión de documentos y requisitos</p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="col-md-4">
+                <div class="col-md-4 ">
                     <div class="card h-100 border-0 shadow-sm">
                         <div class="card-body text-center">
                             <div class="feature-icon mb-3">
-                                <i class="bi bi-envelope-open"></i>
+                                <i class="bi bi-envelope-open important-date"></i>
                             </div>
                             <h3>Resultados</h3>
-                            <p>15 Jul 2025</p>
+                            <p>15 Jul 2025</p><!--Aqui  mas adelante cambiar con ifo de las bases de datos -->
                             <p class="text-muted">Publicación de aspirantes admitidos</p>
                         </div>
                     </div>
@@ -163,10 +144,10 @@
                         <div class="card-body">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">Título de educación media (original y copia)</li>
-                                <li class="list-group-item">Certificado de notas de educación media</li>
-                                <li class="list-group-item">Fotocopia de identidad</li>
+                               <!-- <li class="list-group-item">Certificado de notas de educación media</li>-->
+                                <li class="list-group-item">Fotocopia de identidad o partida de nacimineto</li>
                                 <li class="list-group-item">2 fotografías tamaño carné</li>
-                                <li class="list-group-item">Comprobante de pago de derechos</li>
+                               <!-- <li class="list-group-item">Comprobante de pago de derechos</li>-->
                             </ul>
                         </div>
                     </div>
@@ -180,10 +161,10 @@
                         <div class="card-body">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">Título debidamente apostillado</li>
-                                <li class="list-group-item">Certificado de notas legalizado</li>
+                              <!-- <li class="list-group-item">Certificado de notas legalizado</li>-->
                                 <li class="list-group-item">Pasaporte vigente</li>
-                                <li class="list-group-item">Carné de residencia (si aplica)</li>
-                                <li class="list-group-item">Traducción oficial (si aplica)</li>
+                                <li class="list-group-item">Carné de residencia </li>
+                                <li class="list-group-item">Traducción oficial </li>
                             </ul>
                         </div>
                     </div>
@@ -201,25 +182,17 @@
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form id="formularioAdmisionModal">
+                <form id="formularioAdmisionModal" action="../../../src/controllers/aspirantesController.php" method="POST" enctype="multipart/form-data">
                     <div class="row g-3">
                         <!-- Datos Personales -->
-                        <div class="col-md-6">
-                            <label class="form-label required-field">Nombres</label>
-                            <input type="text" class="form-control" id="modalNombres" required>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label required-field">Apellidos</label>
-                            <input type="text" class="form-control" id="modalApellidos" required>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label required-field">Fecha de Nacimiento</label>
-                            <input type="date" class="form-control" id="modalFechaNacimiento" required>
+                        <div class="col-md-12">
+                            <label class="form-label required-field">Nombre Completo</label>
+                            <input type="text" class="form-control" id="modalNombres" name="nombre" required>
                         </div>
                         <div class="col-md-6">
                             <label class="form-label required-field">Nacionalidad</label>
                             <select class="form-select" id="modalNacionalidad" required>
-                                <option value="">Seleccione...</option>
+                                <option value="slec">Seleccione...</option>
                                 <option value="HN">Hondureña</option>
                                 <option value="EX">Extranjera</option>
                             </select>
@@ -228,31 +201,28 @@
                         <!-- Campos condicionales para identidad/pasaporte -->
                         <div class="col-md-6" id="modalIdentidadContainer">
                             <label class="form-label required-field">Número de Identidad</label>
-                            <input type="text" class="form-control" id="modalIdentidad" required>
+                            <input type="text" class="form-control" id="modalIdentidad" name="dni" required>
                         </div>
                         <div class="col-md-6" id="modalPasaporteContainer" style="display: none;">
                             <label class="form-label">Número de Pasaporte</label>
-                            <input type="text" class="form-control" id="modalPasaporte">
+                            <input type="text" class="form-control" id="modalPasaporte" name="dni">
                         </div>
                         
                         <!-- Información de Contacto -->
                         <div class="col-md-6">
-                            <label class="form-label required-field">Teléfono</label>
-                            <input type="tel" class="form-control" id="modalTelefono" required>
+                            <label class="form-label required-field">Teléfono o celular</label>
+                            <input type="tel" class="form-control" id="modalTelefono" name="telefono" required>
                         </div>
-                        <div class="col-md-6">
-                            <label class="form-label">Celular (Opcional)</label>
-                            <input type="tel" class="form-control" id="modalCelular">
-                        </div>
+                       
                         <div class="col-12">
                             <label class="form-label required-field">Correo Electrónico</label>
-                            <input type="email" class="form-control" id="modalCorreo" required>
+                            <input type="email" class="form-control" id="modalCorreo" name="correo" required>
                         </div>
                         
                         <!-- Información Académica -->
                         <div class="col-md-6">
                             <label class="form-label required-field">Centro Regional</label>
-                            <select class="form-select" id="modalCentroRegional" required>
+                            <select class="form-select" id="modalCentroRegional" name="centro_regional" required>
                                 <option value="">Seleccione...</option>
                                 <option>Ciudad Universitaria (Tegucigalpa)</option>
                                 <option>Valle de Sula (San Pedro Sula)</option>
@@ -263,8 +233,21 @@
                             </select>
                         </div>
                         <div class="col-md-6">
-                            <label class="form-label required-field">Carrera de Interés</label>
-                            <select class="form-select" id="modalCarrera" required>
+                            <label class="form-label required-field">Carrera principal de Interés</label>
+                            <select class="form-select" id="modalCarrera" name="carrera_p" required>
+                                <option value="">Seleccione...</option>
+                                <option>Medicina</option>
+                                <option>Derecho</option>
+                                <option>Ingeniería Civil</option>
+                                <option>Ingeniería en Sistemas</option>
+                                <option>Administración de Empresas</option>
+                                <option>Psicología</option>
+                                <option>Odontología</option>
+                            </select>
+                        </div>
+                         <div class="col-md-6">
+                            <label class="form-label required-field">Carrera secundaria de Interés</label>
+                            <select class="form-select" id="modalCarrera" name="carrera_s" required>
                                 <option value="">Seleccione...</option>
                                 <option>Medicina</option>
                                 <option>Derecho</option>
@@ -279,20 +262,9 @@
                         <!-- Documentación -->
                         <div class="col-12">
                             <label class="form-label required-field">Certificado de Estudios (PDF, 2MB max)</label>
-                            <input type="file" class="form-control" id="modalCertificado" accept=".pdf" required>
+                            <input type="file" class="form-control" id="modalCertificado" name="certificado" required>
                         </div>
-                        <div class="col-12" id="modalDocumentoIdentidadContainer">
-                            <label class="form-label required-field">Documento de Identidad (PDF/Imagen, 2MB max)</label>
-                            <input type="file" class="form-control" id="modalDocumentoIdentidad" accept=".pdf,.jpg,.jpeg,.png" required>
-                        </div>
-                        <div class="col-12" id="modalPasaporteDocumentoContainer" style="display: none;">
-                            <label class="form-label">Pasaporte (PDF/Imagen, 2MB max)</label>
-                            <input type="file" class="form-control" id="modalPasaporteDocumento" accept=".pdf,.jpg,.jpeg,.png">
-                        </div>
-                        <div class="col-12" id="modalApostillaContainer" style="display: none;">
-                            <label class="form-label">Documento Apostillado (PDF, 2MB max)</label>
-                            <input type="file" class="form-control" id="modalApostilla" accept=".pdf">
-                        </div>
+                    
                         
                         <!-- Declaración -->
                         <div class="col-12 mt-3">
@@ -304,11 +276,11 @@
                             </div>
                         </div>
                     </div>
-                </form>
-            </div>
-            <div class="modal-footer">
+                    <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-unah" id="modalEnviarSolicitud">Enviar Solicitud</button>
+                <button type="submit" class="btn btn-unah" id="modalEnviarSolicitud">Enviar Solicitud</button>
+            </div>
+                </form>
             </div>
         </div>
     </div>
@@ -325,6 +297,6 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="./../../assets/js/main.mjs"></script>
-  <script src="./../../assets/js/admisiones.js"></script>
+  <script src="./../../assets/js/admissions/aspirante.js"></script>
 </body>
 </html>

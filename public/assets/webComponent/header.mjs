@@ -9,7 +9,7 @@ class unahHeader extends HTMLElement {
     <nav class="navbar bg-body-tertiary fixed-top">
       <div class="container-fluid">
         <a class="navbar-brand d-flex align-items-center" href="#">
-          <img src="../../assets/img/image.png" alt="Logo UNAH" width="90" height="80" class="d-inline-block align-text-top me-2">
+          <img src="../../assets/img/unah_azul.png" alt="Logo UNAH" width="60" height="70" class="d-inline-block align-text-top me-2">
           <span class="fs-4 fw-bold">Admisiones UNAH</span>
         </a>
         <div class="d-flex align-items-center">

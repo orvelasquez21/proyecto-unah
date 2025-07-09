@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__.'/../repositories/obtenerSolicitudesPendientesRepository.php';
+require_once __DIR__ . '/../../repositories/solicitudesRepository.php';
 
 function listarSolicitudes($pdo) {
     $solicitudes = obtenerSolicitudesPendientes($pdo);

@@ -2,7 +2,7 @@
 // src/config/db_config.php
 
 $host = 'localhost';
-$dbname = 'BD_ADMISIONES';
+$dbname = 'modulo_admisiones';
 $username = 'root';
 $password = 'bd';
 
@@ -11,6 +11,7 @@ try {
     // Configuración para que PDO lance excepciones en errores
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     echo "coneccion exitosa";
+    return $pdo;
 } catch (PDOException $e) {
     // Si falla la conexión, muestra error y detiene ejecución
     header("Location:  ./../../public/views/admissions/formulario.html");

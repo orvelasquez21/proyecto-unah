@@ -1,0 +1,36 @@
+:root {
+            --unah-blue: #0a3d62;
+            --unah-yellow: #aab416;
+            --unah-green: #1e8449;
+            --bs-success-text-emphasis: #0a3622;
+        }
+        .bg-unah {
+            background-color: var(--unah-blue);
+        }
+        .btn-unah {
+            background-color: var(--unah-blue);
+            color: white;
+        }
+        .btn-unah:hover {
+            background-color: var(--unah-yellow);
+            color: white;
+        }
+        .hero-section {
+            background: linear-gradient(rgba(10, 61, 98, 0.8), rgba(10, 61, 98, 0.8)), 
+                        url('../../assets/img/Vida-Universitaria-12.png');
+            /*background: var(--bs-success-text-emphasis);*/
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--unah-blue);
+        }
+        .process-step {
+            border-left: 3px solid var(--unah-green);
+            padding-left: 15px;
+        }
+        .important-date{
+            color: var(--unah-yellow);
+        }

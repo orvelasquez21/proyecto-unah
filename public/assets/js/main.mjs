@@ -1,6 +1,8 @@
 
 import { pathWebComponent } from "./utilities.js"
 import { admissionsWebComponent } from "./utilities.js";
+
+
 /*import { unahSidebar } from '{pathWebcomponet}sidebar.mjs'
 import { unahFooter } from "../../../assets/components/footer.mjs"
 import { unahLoging} from "../../../assets/components/loging.mjs"
@@ -9,6 +11,15 @@ import{unahPagination} from "../../../assets/components/pagination.mjs"
 import{unahSolicitudesTable} from "../components/solicitudesTable.mjs"
 import{unahSolicitudesDetalle} from "../components/solicitudesDetalle.mjs"
 */
+
+/*import { unahSidebar } from `${pathWebComponent}sidebar.mjs`
+import { unahFooter } from `${pathWebComponent}footer.mjs`
+import { unahLoging} from `${pathWebComponent}loging.mjs`
+import{unahHeader} from `${pathWebComponent}header.mjs`
+import{unahPagination} from `${pathWebComponent}pagination.mjs`
+import{unahSolicitudesTable} from `${admissionsWebComponent}solicitudesTable.mjs`
+import{unahSolicitudesDetalle} from `${admissionsWebComponent}solicitudesDetalle.mjs`
+ */
 
 const {unahSidebar} = await import (`${pathWebComponent}sidebar.mjs`);
 const {unahFooter} = await import (`${pathWebComponent}footer.mjs`);

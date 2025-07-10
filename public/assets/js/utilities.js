@@ -1,2 +1,2 @@
-export const pathWebComponent = "../webComponent/";
-export const admissionsWebComponent = "../webComponent/admissionsWebComponent/";
+export const pathWebComponent = "../../webComponent/";
+export const admissionsWebComponent = "../../webComponent/admissionsWebComponent/";

@@ -28,7 +28,7 @@
                             Estudiantes
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="./views/admissions/formulario.html">Admisiones</a></li>
+                            <li><a class="dropdown-item" href="./views/admissions/forms.html">Admisiones</a></li>
                             <li><a class="dropdown-item" href="#">Oferta Académica</a></li>
                             <li><a class="dropdown-item" href="#">Matrícula</a></li>
                         </ul>
@@ -40,7 +40,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Servicios Académicos</a></li>
-                            <li><a class="dropdown-item" href="biblioteca_index.html">Servicios de Biblioteca</a></li>
+                            <li><a class="dropdown-item" href="./views/virutalLibrary/">Servicios de Biblioteca</a></li>
                         </ul>
                     </li>
                     

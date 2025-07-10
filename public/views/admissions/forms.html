@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../../assets/css/formulario.css">
+    <link rel="stylesheet" href="../../assets/css/forms.css">
   
 </head>
 <body>
@@ -182,7 +182,7 @@
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form id="formularioAdmisionModal" action="../../../src/controllers/aspirantesController.php" method="POST" enctype="multipart/form-data">
+                <form id="formularioAdmisionModal" action="../../../classes/controllers/aplicantController.php" method="POST" enctype="multipart/form-data">
                     <div class="row g-3">
                         <!-- Datos Personales -->
                         <div class="col-md-12">
@@ -201,7 +201,7 @@
                         <!-- Campos condicionales para identidad/pasaporte -->
                         <div class="col-md-6" id="modalIdentidadContainer">
                             <label class="form-label required-field">Número de Identidad</label>
-                            <input type="text" class="form-control" id="modalIdentidad" name="dni" required>
+                            <input type="text" class="form-control" id="modalIdentidad" name="dni" >
                         </div>
                         <div class="col-md-6" id="modalPasaporteContainer" style="display: none;">
                             <label class="form-label">Número de Pasaporte</label>
@@ -296,7 +296,7 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="./../../assets/js/main.mjs"></script>
-  <script src="./../../assets/js/admissions/aspirante.js"></script>
+    <script type="module" src="./../../assets/js/modules/main.js"></script>
+  <script src="./../../assets/js/admissions/applicant.js"></script>
 </body>
 </html>

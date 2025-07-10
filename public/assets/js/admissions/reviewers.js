@@ -1,7 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
     // Elementos de la interfaz
-    const solicitudesPendientesSection = document.getElementById('solicitudes-pendientes');
+    const pendingRequest = document.getElementById('solicitudes-pendientes');
     const detalleSolicitudSection = document.getElementById('detalle-solicitud');
     const btnVolverSolicitudes = document.getElementById('btnVolverSolicitudes');
     const rechazarSolicitudRadio = document.getElementById('rechazarSolicitud');
@@ -12,36 +12,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    // Función para cargar datos desde el API
+    // Función para cargar datos desde el API //---->cambiar a funciones tipo flecha con constantes 
     function cargarSolicitudes() {
-        fetch("http://localhost:3000/public/api/admissionsListarSolicitudes.php")
-            .then(response => {
+        fetch("/api/admissions/admissionsListRequests.php")
+            .then(async response => {
                 console.log("Respuesta recibida, estado:", response.status);
 
                 if (!response.ok) {
                     // Si la respuesta no es exitosa, intentamos leer el cuerpo del error
-                    return response.text().then(errorText => {
-                        throw new Error(`Error ${response.status}: ${errorText || 'Sin detalles'}`);
-                    });
+                    const errorText = await response.text();
+                    throw new Error(`Error ${response.status}: ${errorText || 'Sin detalles'}`);
                 }
 
                 // Primero obtenemos el texto para verificar el contenido
-                return response.text().then(text => {
-                    console.log("Respuesta cruda:", text);
-
-                    try {
-                        // Intentamos parsear como JSON
-                        const data = JSON.parse(text);
-                        console.log("JSON parseado correctamente");
-                        return data;
-                    } catch (e) {
-                        // Si falla el parseo, verificamos si es un error común
-                        if (text.trim().startsWith("<")) {
-                            throw new Error("El servidor devolvió HTML en lugar de JSON. Posible error PHP.");
-                        }
-                        throw new Error("La respuesta no es JSON válido: " + text.substring(0, 100) + "...");
+                const text = await response.text();
+                console.log("Respuesta cruda:", text);
+                try {
+                    // Intentamos parsear como JSON
+                    const data_1 = JSON.parse(text);
+                    console.log("JSON parseado correctamente");
+                    return data_1;
+                } catch (e) {
+                    // Si falla el parseo, verificamos si es un error común
+                    if (text.trim().startsWith("<")) {
+                        throw new Error("El servidor devolvió HTML en lugar de JSON. Posible error PHP.");
                     }
-                });
+                    throw new Error("La respuesta no es JSON válido: " + text.substring(0, 100) + "...");
+                }
             })
             .then(data => {
                 console.log("Datos procesados:", data);
@@ -106,8 +103,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // Función para determinar la clase CSS según el estado
-    function obtenerClaseEstado(estado) {
-        switch (estado.toLowerCase()) {
+    function getState(state) {
+        switch (state.toLowerCase()) {
             case 'pendiente': return 'bg-warning text-dark';
             case 'aprobado': return 'bg-success text-white';
             case 'rechazado': return 'bg-danger text-white';
@@ -119,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // Función para asignar eventos a los botones "Revisar"
-    function asignarEventosRevisar() {
+    function assingEventReview() {
 
         const revisarButtons = document.querySelectorAll('.btn-revisar');
 
@@ -130,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 solicitudIdDisplay.textContent = solicitudId;
 
                 // Ocultar lista y mostrar detalle
-                solicitudesPendientesSection.style.display = 'none';
+                pendingRequest.style.display = 'none';
                 detalleSolicitudSection.style.display = 'block';
                 console.log("se asignarion los eventos a los botones");
                 // Aquí deberías hacer otro fetch para cargar los detalles específicos
@@ -162,7 +159,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Evento para volver a la lista
     btnVolverSolicitudes.addEventListener('click', function () {
         detalleSolicitudSection.style.display = 'none';
-        solicitudesPendientesSection.style.display = 'block';
+        pendingRequest.style.display = 'block';
     });
 
     // Habilitar/deshabilitar el campo de observaciones según la decisión
@@ -197,7 +194,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Cargar las solicitudes al inicio
     cargarSolicitudes();
 
-    let valoresData = ["Nombre coincide con titulo",
+    let valuesData = ["Nombre coincide con titulo",
         "Apellidos conincie con tiutlo",
         "DOcumento es el titulo",
         "Documento es legible",
@@ -208,22 +205,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function rederCheckBoxs() {
 
-        const contenedor = document.getElementById("contenedorValidaciones");
+        const container = document.getElementById("contenedorValidaciones");
 
         let htmlCheckBoxs = "";
 
-        valoresData.forEach((contenido, index) => {
-            let contLower = contenido.toLocaleUpperCase()
+        valuesData.forEach((content, index) => {
+            let contLower = content.toLocaleUpperCase()
 
             htmlCheckBoxs += `<div class="form-check">
                 <input class="form-check-input" type="checkbox" id="${index}">
                 <label class="form-check-label" for="${index}">
-                  ${contenido}
+                  ${content}
                 </label>
               </div>`;
         });
 
-        contenedor.innerHTML = htmlCheckBoxs;
+        container.innerHTML = htmlCheckBoxs;
     }
 });
 

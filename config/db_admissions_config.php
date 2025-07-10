@@ -14,7 +14,8 @@ try {
     return $pdo;
 } catch (PDOException $e) {
     // Si falla la conexión, muestra error y detiene ejecución
-    header("Location:  ./../../public/views/admissions/formulario.html");
+    header("Location:  ./../public/views/admissions/forms.html");
      exit("Error de conexión a la base de datos: " . $e->getMessage());
  
 }
+

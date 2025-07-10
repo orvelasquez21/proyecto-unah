@@ -2,17 +2,8 @@ name: CI para módulo de Admisiones
 
 on:
   push:
-    paths:
-      - 'proyecto-unah/public/assets/webComponent/admissionsWebComponent/**'
-      - 'proyecto-unah/public/views/admissions/**'
-      - 'proyecto-unah/public/assets/js/**'
-      - 'proyecto-unah/src/services/admissions/**'
-  pull_request:
-    paths:
-      - 'proyecto-unah/public/assets/webComponent/admissionsWebComponent/**'
-      - 'proyecto-unah/public/views/admissions/**'
-      - 'proyecto-unah/public/assets/js/**'
-      - 'proyecto-unah/src/services/admissions/**'
+     branches:
+      - main
 
 jobs:
   php-lint:

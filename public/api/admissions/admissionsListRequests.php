@@ -5,9 +5,11 @@
 //$listado = listarSolicitudesPendientes($pdo);
 //header('Content-Type: application/json');
 //echo json_encode($listado);
-require_once __DIR__ . '/../../src/controllers/solicitudesController.php';
-listarSolicitudesController();
+require_once __DIR__ . '../../../classes/controllers/requestsController.php';
+  $prueba = listarSolicitudesController();
 
+
+  echo "Resultado de la peticion".$prueba;
 
 
 // Mostrar errores para depurar

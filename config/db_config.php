@@ -7,7 +7,7 @@ $username = 'root';
 $password = 'bd';
 
 try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
+    $pdo = new PDO("mysql:host=$host; dbname=$dbname; charset=utf8", $username, $password);
     // Configuración para que PDO lance excepciones en errores
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     echo "coneccion exitosa";

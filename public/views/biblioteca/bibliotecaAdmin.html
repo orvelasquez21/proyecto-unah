@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca UNAH</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --unah-blue: #0a3d62;
+            --unah-green: #1e8449;
+        }
+        .bg-unah {
+            background-color: var(--unah-blue);
+        }
+        .btn-unah {
+            background-color: var(--unah-blue);
+            color: white;
+        }
+        .btn-unah:hover {
+            background-color: #0c4b7a;
+            color: white;
+        }
+        .hero-section {
+            background: linear-gradient(rgba(10, 61, 98, 0.8), rgba(10, 61, 98, 0.8));
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--unah-blue);
+        }
+        .process-step {
+            border-left: 3px solid var(--unah-green);
+            padding-left: 15px;
+        }
+
+        .buscador-biblioteca {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: #f6f9fb;
+        padding: 16px 0;
+        }
+
+        .buscador-label {
+        font-weight: bold;
+        margin-right: 4px;
+        color: #000;
+        }
+
+        .buscador-select, .buscador-input {
+        height: 32px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 0 8px;
+        font-size: 15px;
+        background: #fff;
+        color: #000;
+        }
+
+        .buscador-input {
+        flex: 1;
+        min-width: 200px;
+        color: #000;
+        }
+        
+        .buscador-input::placeholder {
+        color: #666;
+        }
+
+        .buscador-btn {
+        height: 32px;
+        background: #0074d9;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        padding: 0 16px;
+        font-size: 15px;
+        cursor: pointer;
+        transition: background 0.2s;
+        }
+
+        .buscador-btn:hover {
+        background: #005fa3;
+        }
+
+
+        #contenedor-resultados {
+        margin-top: 20px;
+        }
+
+        .resultado-libro {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #f6f9fb;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 12px;
+        margin-bottom: 10px;
+        }
+
+        .acciones-libro button {
+        margin-left: 8px;
+        background: #0074d9;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        padding: 4px 12px;
+        cursor: pointer;
+        }
+
+        .acciones-libro button:last-child {
+        background: #d90429;
+        }
+
+        .btn-agregar {
+        background: #2ecc40;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        padding: 8px 16px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        }
+
+        #paginacion {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-top: 20px;
+        padding: 15px;
+        background: #f8f9fa;
+        border-radius: 8px;
+        }
+
+        #paginacion button {
+        background: #0074d9;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 8px 16px;
+        cursor: pointer;
+        transition: background 0.2s;
+        }
+
+        #paginacion button:hover:not(:disabled) {
+        background: #005fa3;
+        }
+
+        #paginacion button:disabled {
+        background: #ccc;
+        cursor: not-allowed;
+        }
+
+        .info-paginas {
+        color: #666;
+        font-size: 14px;
+        }
+
+        .modal-oculto {
+        display: none !important;
+        }
+
+        #modal-libro {
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0,0,0,0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+
+        .modal-contenido {
+        background: #fff;
+        padding: 24px;
+        border-radius: 8px;
+        min-width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <!--<display-header></display-header> -->
+
+    <!-- Sección Hero -->
+    <header class="hero-section py-5 mb-5">
+        <div class="container text-center py-5">
+            <h1 class="display-4 fw-bold mb-4">Sistema Bibliotecario</h1>
+            <p class="lead mb-5">Bienvenido a la colección de recursos de la UNAH</p>
+            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                <div class="buscador-biblioteca">
+                    <label for="busqueda" class="buscador-label">Buscar</label>
+                    <select id="catalogo" class="buscador-select">
+                      <option>Catálogo de biblioteca</option>
+                      <option>autor</option>
+                      <option>tema</option>
+                      <!-- Más opciones si lo deseas -->
+                    </select>
+                    <input type="text" id="busqueda" class="buscador-input" />
+                    <select id="filtro" class="buscador-select">
+                      <option>Todas las bibliotecas</option>
+                      <!-- Más opciones si lo deseas -->
+                    </select>
+                    <button class="buscador-btn">Ir</button>
+                  </div>
+            </div>
+        </div>
+    </header>
+  <!-- <display-header></display-header> -->
+  
+    <main class="container">
+        
+        
+
+        <!-- Sección botón para agregar libro -->
+        <section id="calendarios" class="my-5 py-5 bg-light rounded-3">
+            <!-- Botón para agregar nuevo libro -->
+            <button class="btn-agregar" onclick="abrirModalAgregar()">Agregar libro</button>
+        </section>
+
+        <!-- Contenedor de resultados -->
+        <div id="contenedor-resultados">
+            <!-- Los resultados de libros se insertarán aquí dinámicamente -->
+        </div>
+
+        <!-- Controles de paginación -->
+        <div id="paginacion">
+            <button onclick="paginaAnterior()">Anterior</button>
+            <span id="pagina-actual">1</span>
+            <button onclick="paginaSiguiente()">Siguiente</button>
+        </div>
+
+        <!-- Modal para agregar/editar libro -->
+        <div id="modal-libro" class="modal-oculto">
+            <div class="modal-contenido">
+            <h2 id="modal-titulo">Agregar/Editar Libro</h2>
+            <form id="form-libro" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="titulo" class="form-label">Título:</label>
+                    <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Ingrese el título del libro" required>
+                    <small class="form-text text-muted">El título debe tener entre 5 y 70 caracteres</small>
+                </div>
+                <div class="mb-3">
+                    <label for="autor" class="form-label">Autor:</label>
+                    <input type="text" class="form-control" id="autor" name="autor" placeholder="Ejemplo: Juan A. Pérez o J. A. Pérez" required>
+                    <small class="form-text text-muted">Formato: Cualquier parte puede ser inicial con punto (ej: Juan A. Pérez, J. A. Pérez, Juan A. P.)</small>
+                </div>
+                <div class="mb-3">
+                    <label for="temas" class="form-label">Temas:</label>
+                    <div id="temas-chips-container" class="form-control" style="min-height: 48px; display: flex; flex-wrap: wrap; align-items: center; gap: 4px; padding: 4px 8px;">
+                        <!-- Chips se insertarán aquí -->
+                        <input type="text" id="temas-input" placeholder="Escribe un tema y presiona Enter o Coma" style="border: none; outline: none; flex: 1; min-width: 120px;" autocomplete="off">
+                    </div>
+                    <input type="hidden" id="temas" name="temas" required>
+                    <small class="form-text text-muted">Presiona Enter o Coma para agregar. Haz clic en la 'x' para eliminar cualquier tema.</small>
+                </div>
+                <div class="mb-3">
+                    <label for="archivo" class="form-label">Archivo del libro:</label>
+                    <input type="file" class="form-control" id="archivo" name="archivo" accept=".pdf" required>
+                    <small id="archivo-help" class="form-text text-muted">Solo se permiten archivos PDF</small>
+                    <small id="archivo-edit-help" class="form-text text-muted" style="display:none; color:#888;">No es posible cambiar el archivo PDF al editar. Si necesitas reemplazar el archivo, elimina el libro y vuelve a crearlo.</small>
+                </div>
+                <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <button type="button" class="btn btn-secondary" onclick="cerrarModal()">Cancelar</button>
+                </div>
+            </form>
+            </div>
+        </div>
+
+    </main>
+
+
+
+
+
+    <!-- Modal de Login (para empleados) 
+     <unah-loging></unah-loging>-->
+
+    <!-- Pie de página -->
+    <unah-footer></unah-footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="../../assets/js/modules/main.js"></script>
+    <script src="../../assets/js/library/library.js"></script>
+</body>
+</html> 

@@ -1,6 +1,6 @@
 <?php
-//require_once __DIR__ .  '/../../src/config/db_config.php';
-//require_once __DIR__ .  '/../../src/services/admissions/solicitudesService.php';
+//require_once __DIR__ .  '/../../classes/config/db_config.php';
+//require_once __DIR__ .  '/../../classes/services/admissions/solicitudesService.php';
 
 //$listado = listarSolicitudesPendientes($pdo);
 //header('Content-Type: application/json');

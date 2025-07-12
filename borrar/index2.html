@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biblioteca UNAH</title>
+
+  <!-- Bootstrap CSS & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --unah-blue: #0a3d62;
+      --unah-green: #1e8449;
+    }
+    .hero-section {
+      background: linear-gradient(rgba(10, 61, 98, 0.8), rgba(10, 61, 98, 0.8));
+      color: white;
+    }
+    .chip-tema {
+      background: #e0e0e0;
+      border-radius: 16px;
+      padding: 2px 8px;
+      display: inline-flex;
+      align-items: center;
+      margin-right: 4px;
+      margin-bottom: 2px;
+    }
+    .chip-tema button {
+      background: none;
+      border: none;
+      color: #d90429;
+      font-size: 16px;
+      margin-left: 4px;
+      cursor: pointer;
+    }
+    #temas-chips-container {
+      min-height: 48px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 8px;
+    }
+    #temas-input {
+      border: none;
+      outline: none;
+      flex: 1;
+      min-width: 120px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <display-header></display-header> 
+
+  <!-- Hero Section -->
+  <header class="hero-section py-5 mb-5">
+    <div class="container text-center py-5">
+      <h1 class="display-4 fw-bold mb-4">Sistema Bibliotecario</h1>
+      <p class="lead mb-4">Bienvenido a la colección de recursos de la UNAH</p>
+      
+      <!-- Buscador (similar al original) -->
+      <div class="buscador-biblioteca bg-light p-3 rounded mx-auto" style="max-width: 800px;">
+        <div class="d-flex align-items-center gap-2 flex-wrap">
+          <label for="busqueda" class="buscador-label fw-bold mb-0">Buscar</label>
+          <select id="catalogo" class="buscador-select form-select flex-grow-0" style="width: auto;">
+            <option>Catálogo de biblioteca</option>
+            <option>autor</option>
+            <option>tema</option>
+          </select>
+          <input type="text" id="busqueda" class="buscador-input form-control flex-grow-1" />
+          <select id="filtro" class="buscador-select form-select flex-grow-0" style="width: auto;">
+            <option>Todas las bibliotecas</option>
+          </select>
+          <button class="buscador-btn btn btn-primary">Ir</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  
+ <main class="container">
+    <!-- Botón agregar libro -->
+    <section class="my-4">
+      <button class="btn btn-success" onclick="abrirModalAgregar()">
+        <i class="bi bi-plus-lg"></i> Agregar libro
+      </button>
+    </section>
+
+    <!-- Resultados -->
+    <div id="contenedor-resultados" class="my-4">
+      <!-- Los resultados de libros se insertarán aquí dinámicamente -->
+    </div>
+
+    <!-- Paginación -->
+    <div id="paginacion" class="d-flex justify-content-center align-items-center gap-3 my-4 p-3 bg-light rounded">
+      <button class="btn btn-primary" onclick="paginaAnterior()">Anterior</button>
+      <span id="pagina-actual">1</span>
+      <button class="btn btn-primary" onclick="paginaSiguiente()">Siguiente</button>
+      <span class="info-paginas text-muted"></span>
+    </div>
+
+    <!-- Modal para agregar/editar libro (similar al original pero con Bootstrap) -->
+    <div id="modal-libro" class="modal fade" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-titulo">Agregar/Editar Libro</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form id="form-libro" enctype="multipart/form-data">
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="titulo" class="form-label">Título:</label>
+                <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Ingrese el título del libro" required>
+                <small class="form-text text-muted">El título debe tener entre 5 y 70 caracteres</small>
+              </div>
+              <div class="mb-3">
+                <label for="autor" class="form-label">Autor:</label>
+                <input type="text" class="form-control" id="autor" name="autor" placeholder="Ejemplo: Juan A. Pérez o J. A. Pérez" required>
+                <small class="form-text text-muted">Formato: Cualquier parte puede ser inicial con punto (ej: Juan A. Pérez, J. A. Pérez, Juan A. P.)</small>
+              </div>
+              <div class="mb-3">
+                <label for="temas" class="form-label">Temas:</label>
+                <div id="temas-chips-container" class="form-control">
+                  <!-- Chips se insertarán aquí -->
+                  <input type="text" id="temas-input" placeholder="Escribe un tema y presiona Enter o Coma" autocomplete="off">
+                </div>
+                <input type="hidden" id="temas" name="temas" required>
+                <small class="form-text text-muted">Presiona Enter o Coma para agregar. Haz clic en la 'x' para eliminar cualquier tema.</small>
+              </div>
+              <div class="mb-3">
+                <label for="archivo" class="form-label">Archivo del libro:</label>
+                <input type="file" class="form-control" id="archivo" name="archivo" accept=".pdf" required>
+                <small id="archivo-help" class="form-text text-muted">Solo se permiten archivos PDF</small>
+                <small id="archivo-edit-help" class="form-text text-muted" style="display:none; color:#888;">
+                  No es posible cambiar el archivo PDF al editar. Si necesitas reemplazar el archivo, elimina el libro y vuelve a crearlo.
+                </small>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">Guardar</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- Footer -->
+  <unah-footer></unah-footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="../../assets/js/modules/main.js"></script>
+  <script src="../../assets/js/library/library-main.js"></script>
+  
+  <script>
+    // Inicialización del modal de Bootstrap
+    const modalLibro = new bootstrap.Modal(document.getElementById('modal-libro'));
+    
+    // Sobreescribir funciones de apertura/cierre para usar Bootstrap
+    window.abrirModalAgregar = function() {
+      const form = document.getElementById('form-libro');
+      document.getElementById('modal-titulo').textContent = 'Agregar Nuevo Libro';
+      form.reset();
+      form.archivo.disabled = false;
+      document.getElementById('archivo-help').style.display = 'block';
+      document.getElementById('archivo-edit-help').style.display = 'none';
+      form.dataset.modo = 'agregar';
+      modalLibro.show();
+    };
+    
+    window.cerrarModal = function() {
+      modalLibro.hide();
+    };
+    
+    // El resto del JavaScript original puede mantenerse igual
+    // ya que estamos manteniendo los mismos IDs y estructura
+  </script>
+</body>
+</html>

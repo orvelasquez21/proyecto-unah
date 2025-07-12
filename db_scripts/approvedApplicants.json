@@ -1,0 +1,17 @@
+[
+  {
+    "primer_nombre": "Jose",
+    "segundo_nombre": "Porlilio",
+    "tercer_nombre": "Lobo",
+    "cuarto_nombre": "Garcia",
+    "quinto_nombre": "Mendoza",
+    "password": "R4nd0mPass1"
+  },
+  {
+    "primer_nombre": "Maria",
+    "segundo_nombre": "Lucia",
+    "primer_apellido": "Rojas",
+    "segundo_apellido": "Gomez",
+    "password": "R4nd0mPass2"
+  }
+]

@@ -1,0 +1,19 @@
+# Denegar acceso directo a archivos PDF
+<Files "*.pdf">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Denegar acceso directo a archivos JSON
+<Files "*.json">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Permitir acceso solo desde scripts PHP autorizados
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTP_REFERER} !^http://(www\.)?localhost [NC]
+    RewriteCond %{HTTP_REFERER} !^http://(www\.)?127\.0\.0\.1 [NC]
+    RewriteRule \.(pdf|json)$ - [F,L]
+</IfModule> 

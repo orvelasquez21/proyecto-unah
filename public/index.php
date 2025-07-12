@@ -40,7 +40,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Servicios Académicos</a></li>
-                            <li><a class="dropdown-item" href="./views/virutalLibrary/">Servicios de Biblioteca</a></li>
+                            <li><a class="dropdown-item" href="/views/library/index.html">Servicios de Biblioteca</a></li>
                         </ul>
                     </li>
                     
@@ -112,6 +112,9 @@
             </div>
         </div>
     </main>
+
+
+    <iframe src="http://localhost:3000/api/virtualLibrary/get/book" frameborder="0"></iframe>
     
     <!-- Pie de página con Bootstrap -->
     <footer class="bg-dark text-white py-4 mt-5">
@@ -143,6 +146,10 @@
             </div>
         </div>
     </footer>
+
+
+
+    
 
     <!-- Bootstrap JS y dependencias -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

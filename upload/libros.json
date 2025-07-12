@@ -1,0 +1,95 @@
+{
+    "libros": [
+        {
+            "id": "LIBRO_000002",
+            "titulo": "Gerencia Informáticas",
+            "autor": "L. López",
+            "temas": "Gerencia informática",
+            "archivo": "1751982586_Desarrollo-de-Habilidades-Directivas_TEST.pdf",
+            "nombre_original": "Desarrollo-de-Habilidades-Directivas_TEST.pdf",
+            "tamano": 70095,
+            "fecha_subida": "2025-07-08 13:49:46",
+            "fecha_creacion": "2025-07-08 13:49:46",
+            "estado": "activo",
+            "fecha_modificacion": "2025-07-12 11:42:25"
+        },
+        {
+            "id": "LIBRO_000003",
+            "titulo": "PHP y más",
+            "autor": "Juan Perez",
+            "temas": "Programación, PHP",
+            "archivo": "1751984938_Desarrollo-de-Habilidades-Directivas_resultados.pdf",
+            "nombre_original": "Desarrollo-de-Habilidades-Directivas_resultados.pdf",
+            "tamano": 84736,
+            "fecha_subida": "2025-07-08 14:28:58",
+            "fecha_creacion": "2025-07-08 14:28:58",
+            "estado": "activo",
+            "fecha_modificacion": "2025-07-09 05:23:11"
+        },
+        {
+            "id": "LIBRO_000005",
+            "titulo": "MySQL",
+            "autor": "E. Maradiaga",
+            "temas": "sql, Programación",
+            "archivo": "1752038650_Plan-de-Estudios-Ingenieria-en-Sistemas.pdf",
+            "nombre_original": "Plan-de-Estudios-Ingenieria-en-Sistemas.pdf",
+            "tamano": 780830,
+            "fecha_subida": "2025-07-09 05:24:10",
+            "fecha_creacion": "2025-07-09 05:24:10",
+            "estado": "activo",
+            "fecha_modificacion": "2025-07-09 05:24:46"
+        },
+        {
+            "id": "LIBRO_000009",
+            "titulo": "Segunda página",
+            "autor": "D. Galeas",
+            "temas": "Biologia, Ciencias naturales",
+            "archivo": "1752039956_CdigosdeExcepcionesenOracle.pdf",
+            "nombre_original": "Códigos de Excepciones en Oracle.pdf",
+            "tamano": 291504,
+            "fecha_subida": "2025-07-09 05:45:56",
+            "fecha_creacion": "2025-07-09 05:45:56",
+            "estado": "activo"
+        },
+        {
+            "id": "LIBRO_000016",
+            "titulo": "test news",
+            "autor": "Polo Teros",
+            "temas": "cencia",
+            "archivo": "1752329243_2_Orlin_Aguilar.pdf",
+            "nombre_original": "2_Orlin_Aguilar .pdf",
+            "tamano": 760183,
+            "fecha_subida": "2025-07-12 14:07:23",
+            "fecha_creacion": "2025-07-12 14:07:23",
+            "estado": "activo"
+        },
+        {
+            "id": "LIBRO_000017",
+            "titulo": "modulador",
+            "autor": "Jose Por",
+            "temas": "Gerencia informática",
+            "archivo": "1752332469_2_Orlin_Aguilar.pdf",
+            "nombre_original": "2_Orlin_Aguilar .pdf",
+            "tamano": 760183,
+            "fecha_subida": "2025-07-12 15:01:09",
+            "fecha_creacion": "2025-07-12 15:01:09",
+            "estado": "activo"
+        },
+        {
+            "id": "LIBRO_000018",
+            "titulo": "hollla",
+            "autor": "Tort Vilesh",
+            "temas": "deseperacion",
+            "archivo": "1752342163_forma03llPAC2025.pdf",
+            "nombre_original": "forma03llPAC2025.pdf",
+            "tamano": 68061,
+            "fecha_subida": "2025-07-12 17:42:43",
+            "fecha_creacion": "2025-07-12 17:42:43",
+            "estado": "activo"
+        }
+    ],
+    "ultimo_id": 18,
+    "fecha_creacion": "2025-07-08 13:15:29",
+    "total_libros": 7,
+    "ultima_actualizacion": "2025-07-12 17:42:43"
+}

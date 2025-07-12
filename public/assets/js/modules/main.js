@@ -26,6 +26,7 @@ const {unahFooter} = await import (`${pathWebComponent}footer.mjs`);
 const {unahLoging} = await import (`${pathWebComponent}loging.mjs`);
 const {unahHeader} = await import (`${pathWebComponent}header.mjs`);
 const {unahPagination} = await import (`${pathWebComponent}pagination.mjs`);
+const {unahViewFile} = await import (`${pathWebComponent}viewFile.mjs`);
 const {unahSolicitudesTable} = await import (`${admissionsWebComponent}tableRequest.mjs`);
 const {unahSolicitudesDetalle} = await import (`${admissionsWebComponent}detailsRequest.mjs`);
 
@@ -34,6 +35,7 @@ customElements.define("unah-footer", unahFooter)
 customElements.define("unah-loging", unahLoging)
 customElements.define("display-header", unahHeader)
 customElements.define("unah-pagination", unahPagination)
+customElements.define("unah-view-file", unahViewFile)
 customElements.define("admissions-requests-table", unahSolicitudesTable)
 customElements.define("admissions-requests-detalle", unahSolicitudesDetalle)
 
